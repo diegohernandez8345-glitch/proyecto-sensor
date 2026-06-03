@@ -7,7 +7,7 @@ app.use(cors());
 app.use(express.json());
 
 // ⚙️ CONEXIÓN A MONGODB (reemplaza con tu cadena real)
-const mongoURI = 'mongodb+srv://TU_USUARIO:TU_PASSWORD@cluster0.xxxxx.mongodb.net/sensores?retryWrites=true&w=majority';
+const mongoURI = 'mongodb+srv://diego:123456789*@clustersensor.w5ykgpm.mongodb.net/?appName=ClusterSensor';
 
 mongoose.connect(mongoURI)
   .then(() => console.log('✅ Conectado a MongoDB Atlas'))
