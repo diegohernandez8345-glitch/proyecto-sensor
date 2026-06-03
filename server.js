@@ -9,6 +9,12 @@ app.use(express.json());
 // ⚙️ CONEXIÓN A MONGODB (reemplaza con tu cadena real)
 const mongoURI = 'mongodb+srv://diego:123456789%2A@clustersensor.w5ykgpm.mongodb.net/?appName=ClusterSensor';
 
+const mongoURI = process.env.MONGO_URI;
+if (!mongoURI) {
+  console.error('❌ Falta la variable de entorno MONGO_URI');
+  process.exit(1);
+}
+
 mongoose.connect(mongoURI)
   .then(() => console.log('✅ Conectado a MongoDB Atlas'))
   .catch(err => console.error('❌ Error MongoDB:', err));
